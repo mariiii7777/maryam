@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Welcome to Your Symfony Project{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="display-4">Welcome to Your Symfony Project!</h1>
+        <p class="lead">This is your custom homepage. From here, you can navigate to different sections of your application.</p>
+
+        <hr class="my-4">
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Section One</h2>
+                <p>Explore the first section of your application.</p>
+                <a class="btn btn-primary" href="{{ path('section_one') }}" role="button">Go to Section One</a>
+            </div>
+            <div class="col-md-4">
+                <h2>Section Two</h2>
+                <p>Discover what the second section has to offer.</p>
+                <a class="btn btn-primary" href="{{ path('section_two') }}" role="button">Go to Section Two</a>
+            </div>
+            <div class="col-md-4">
+                <h2>Section Three</h2>
+                <p>Check out the third section of your application.</p>
+                <a class="btn btn-primary" href="{{ path('section_three') }}" role="button">Go to Section Three</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

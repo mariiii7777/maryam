@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit BasicBundle{% endblock %}
+
+{% block body %}
+    <h1>Edit BasicBundle</h1>
+
+    {{ include('basic_bundle/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_basic_bundle_index') }}">back to list</a>
+
+    {{ include('basic_bundle/_delete_form.html.twig') }}
+{% endblock %}

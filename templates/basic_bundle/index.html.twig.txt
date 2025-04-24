@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BasicBundle index{% endblock %}
+
+{% block body %}
+    <h1>BasicBundle index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for basic_bundle in basic_bundles %}
+            <tr>
+                <td>{{ basic_bundle.id }}</td>
+                <td>{{ basic_bundle.title }}</td>
+                <td>{{ basic_bundle.description }}</td>
+                <td>{{ basic_bundle.category }}</td>
+                <td>{{ basic_bundle.createdAt ? basic_bundle.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_basic_bundle_show', {'id': basic_bundle.id}) }}">show</a>
+                    <a href="{{ path('app_basic_bundle_edit', {'id': basic_bundle.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">No records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_basic_bundle_new') }}">Create new</a>
+{% endblock %}

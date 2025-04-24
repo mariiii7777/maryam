@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BasicBundle{% endblock %}
+
+{% block body %}
+    <h1>BasicBundle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ basic_bundle.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_basic_bundle_index') }}">back to list</a>
+
+    <a href="{{ path('app_basic_bundle_edit', {'id': basic_bundle.id}) }}">edit</a>
+
+    {{ include('basic_bundle/_delete_form.html.twig') }}
+{% endblock %}
